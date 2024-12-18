@@ -1,6 +1,6 @@
 {
 	"name": "supports-color",
-	"version": "9.3.1",
+	"version": "10.0.0",
 	"description": "Detect whether a terminal supports color",
 	"license": "MIT",
 	"repository": "chalk/supports-color",
@@ -12,15 +12,16 @@
 	},
 	"type": "module",
 	"exports": {
+		"types": "./index.d.ts",
 		"node": "./index.js",
 		"default": "./browser.js"
 	},
+	"sideEffects": false,
 	"engines": {
-		"node": ">=12"
+		"node": ">=18"
 	},
 	"scripts": {
-		"//test": "xo && ava && tsd",
-		"test": "xo && tsd"
+		"test": "xo && ava && tsd"
 	},
 	"files": [
 		"index.js",
@@ -51,11 +52,13 @@
 		"16m"
 	],
 	"devDependencies": {
-		"@types/node": "^16.11.7",
-		"ava": "^3.15.0",
-		"import-fresh": "^3.3.0",
-		"tsd": "^0.18.0",
-		"typescript": "^4.4.3",
-		"xo": "^0.49.0"
+		"@types/node": "^22.10.2",
+		"ava": "^6.2.0",
+		"tsd": "^0.31.2",
+		"xo": "^0.60.0"
+	},
+	"ava": {
+		"serial": true,
+		"workerThreads": false
 	}
 }
